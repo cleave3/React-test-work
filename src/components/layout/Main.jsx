@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import BoxPage from "./BoxPage";
 
 const Main = ({ content, time }) => {
   return (
@@ -7,6 +8,7 @@ const Main = ({ content, time }) => {
       <h3>Main Section</h3>
       <p>{content.text}</p>
       <Button />
+      <BoxPage />
     </div>
   );
 };
