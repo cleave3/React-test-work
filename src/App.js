@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
@@ -23,14 +24,16 @@ class App extends Component {
   render() {
     const { content, time } = this.state;
     return (
-      <React.Fragment>
-        <Navbar time={time} />
-        <div className="main-section">
-          <Sidebar />
-          <Main content={content} />
-        </div>
-        <Footer />
-      </React.Fragment>
+      <BrowserRouter>
+        <React.Fragment>
+          <Navbar time={time} />
+          <div className="main-section">
+            <Sidebar />
+            <Main content={content} />
+          </div>
+          <Footer />
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }
