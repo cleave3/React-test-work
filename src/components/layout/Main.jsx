@@ -1,11 +1,13 @@
 import React from "react";
+import Button from "../Button";
 
 const Main = ({ content, time }) => {
   return (
-    <nav className="main">
+    <div className="main">
       <h3>Main Section</h3>
       <p>{content.text}</p>
-    </nav>
+      <Button />
+    </div>
   );
 };
 
