@@ -44,3 +44,18 @@ code {
   color: white;
   text-align: center;
 }
+
+button {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+}
+
+.color-button {
+  background-color: green;
+  color: white;
+}
+
+.color-button:hover {
+  background-color: blue;
+}
