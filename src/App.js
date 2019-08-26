@@ -6,13 +6,28 @@ import Main from "./components/layout/Main";
 import Footer from "./components/layout/Footer";
 
 class App extends Component {
+  state = {
+    content: {
+      text:
+        "orem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, illum! Repellat, fugit sunt laboriosam eaque fugiat veniam? Natus possimus maxime veniam dolores tenetur reprehenderit deleniti tempora, id voluptatem impedit aspernatur."
+    },
+    time: []
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ time: new Date() });
+    }, 1000);
+  }
+
   render() {
+    const { content, time } = this.state;
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar time={time} />
         <div className="main-section">
           <Sidebar />
-          <Main />
+          <Main content={content} />
         </div>
         <Footer />
       </React.Fragment>
