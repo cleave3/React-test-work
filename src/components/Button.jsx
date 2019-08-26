@@ -14,6 +14,7 @@ class Button extends Component {
     return (
       <div>
         <button onClick={this.handleClick}>{this.state.text}</button>
+        <button className="color-button">COLOR BUTTON</button>
       </div>
     );
   }
