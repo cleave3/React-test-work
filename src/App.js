@@ -5,6 +5,7 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./components/layout/Home";
 import BoxPage from "./components/layout/BoxPage";
 import ListPage from "./components/layout/ListPage";
+import FormPage from "./components/layout/FormPage";
 
 class App extends Component {
   state = {
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/box" component={BoxPage} />
           <Route path="/list" component={ListPage} />
+          <Route path="/form" component={FormPage} />
         </React.Fragment>
       </BrowserRouter>
     );

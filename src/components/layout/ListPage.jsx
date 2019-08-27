@@ -11,11 +11,7 @@ class ListPage extends Component {
   };
   render() {
     const items = this.state.list.map(item => {
-      return (
-        <ul>
-          <li key={item.id}>{item.item}</li>
-        </ul>
-      );
+      return <li key={item.id}>{item.item}</li>;
     });
     return <div>{items}</div>;
   }
