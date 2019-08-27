@@ -9,22 +9,11 @@ import FormPage from "./components/layout/FormPage";
 import TwoBox from "./components/layout/TwoBox";
 
 class App extends Component {
-  state = {
-    time: []
-  };
-
-  componentDidMount() {
-    setInterval(() => {
-      this.setState({ time: new Date() });
-    }, 1000);
-  }
-
   render() {
-    const { time } = this.state;
     return (
       <BrowserRouter>
         <React.Fragment>
-          <Navbar time={time} />
+          <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/box" component={BoxPage} />
           <Route path="/list" component={ListPage} />
