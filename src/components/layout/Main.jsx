@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button";
 
-const Main = ({ content, time }) => {
+const Main = ({ content }) => {
   return (
     <div className="main">
       <h3>Main Section</h3>
