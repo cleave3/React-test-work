@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HocListComponent from "../HocListComponent";
 
 class ListPage extends Component {
   state = {
@@ -13,8 +14,13 @@ class ListPage extends Component {
     const items = this.state.list.map(item => {
       return <li key={item.id}>{item.item}</li>;
     });
-    return <div>{items}</div>;
+    return (
+      <div>
+        {items}
+        <p>Refresh to observer HOC effect</p>
+      </div>
+    );
   }
 }
-
-export default ListPage;
+// hoc change list item colors.
+export default HocListComponent(ListPage);
