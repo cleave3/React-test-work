@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
-import Sidebar from "./components/layout/Sidebar";
-import Main from "./components/layout/Main";
-import Footer from "./components/layout/Footer";
+import Home from "./components/layout/Home";
+import BoxPage from "./components/layout/BoxPage";
+import ListPage from "./components/layout/ListPage";
 
 class App extends Component {
   state = {
-    content: {
-      text:
-        "orem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, illum! Repellat, fugit sunt laboriosam eaque fugiat veniam? Natus possimus maxime veniam dolores tenetur reprehenderit deleniti tempora, id voluptatem impedit aspernatur."
-    },
     time: []
   };
 
@@ -22,16 +18,14 @@ class App extends Component {
   }
 
   render() {
-    const { content, time } = this.state;
+    const { time } = this.state;
     return (
       <BrowserRouter>
         <React.Fragment>
           <Navbar time={time} />
-          <div className="main-section">
-            <Sidebar />
-            <Main content={content} />
-          </div>
-          <Footer />
+          <Route exact path="/" component={Home} />
+          <Route path="/box" component={BoxPage} />
+          <Route path="/list" component={ListPage} />
         </React.Fragment>
       </BrowserRouter>
     );
