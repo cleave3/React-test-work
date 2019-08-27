@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import HocListComponent from "../HocListComponent";
+import { Consumer } from "../../components/Context";
 
 class ListPage extends Component {
-  state = {
-    list: [
-      { id: 1, item: "stuff 1" },
-      { id: 2, item: "stuff 2" },
-      { id: 3, item: "stuff 3" },
-      { id: 4, item: "stuff 4" }
-    ]
-  };
   render() {
-    const items = this.state.list.map(item => {
-      return <li key={item.id}>{item.item}</li>;
-    });
     return (
-      <div>
-        {items}
-        <p>Refresh to observer HOC effect</p>
-      </div>
+      <Consumer>
+        {data => {
+          const { user } = data;
+          if (user.lemgth < 1) {
+            return <h3>List is Empty</h3>;
+          } else {
+            return (
+              <React.Fragment>
+                <ol>
+                  {user.map(user => {
+                    return <li key={user.id}>{user.name}</li>;
+                  })}
+                </ol>
+                <p>Refresh page to see HOC change text colors</p>
+              </React.Fragment>
+            );
+          }
+        }}
+      </Consumer>
     );
   }
 }

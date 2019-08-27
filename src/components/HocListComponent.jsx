@@ -1,4 +1,5 @@
 import React from "react";
+import { Provider } from "./Context";
 
 const HocListComponent = WrappedComponent => {
   const colours = ["red", "blue", "gray", "pink", "green", "yellow"];
@@ -7,9 +8,11 @@ const HocListComponent = WrappedComponent => {
 
   return () => {
     return (
-      <div className={randomColours}>
-        <WrappedComponent />
-      </div>
+      <Provider>
+        <div className={randomColours}>
+          <WrappedComponent />
+        </div>
+      </Provider>
     );
   };
 };
