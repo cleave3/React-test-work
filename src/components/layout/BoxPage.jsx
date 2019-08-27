@@ -12,16 +12,19 @@ class BoxPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="box-page">
         <div
           style={{
             display: this.state.display,
-            width: "200px",
-            height: "200px",
-            backgroundColor: "blue"
+            width: "100px",
+            height: "100px",
+            backgroundColor: "blue",
+            margin: "40px auto"
           }}
           className="box"></div>
-        <button onClick={this.handleClick}>Click Me</button>
+        <div className="btn-container">
+          <button onClick={this.handleClick}>Click Me</button>
+        </div>
       </div>
     );
   }

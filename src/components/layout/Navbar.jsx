@@ -17,6 +17,9 @@ const Navbar = ({ time }) => {
       <NavLink className="navlink" to="/form">
         Form Page
       </NavLink>
+      <NavLink className="navlink" to="/twobox">
+        Twobox Page
+      </NavLink>
     </nav>
   );
 };
